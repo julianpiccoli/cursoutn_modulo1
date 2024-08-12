@@ -13,31 +13,32 @@
         <div id="novedades" class="col-md-5 offset-md-2 col-xs-12 offset-1 scroll_section">
             <h2>Novedades</h2>
             <ul class="lista-novedades">
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="img/novedades01.jpg">Nuevas recetas 1</a></li>
-                <li><a href="#"><img src="img/novedades01.jpg">Nuevas recetas 2</a></li>
-                <li><a href="#"><img src="img/novedades01.jpg">Nuevas recetas 3</a></li>
-                <li><a href="#"><img src="img/novedades01.jpg">Nuevas recetas 4</a></li>
-                <li><a href="#"><img src="img/novedades01.jpg">Nuevas recetas 5</a></li>
+                {{#each novedades}}
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img
+                            src="img/novedades01.jpg">{{titulo}}</a></li>
+                {{/each}}
+            
             </ul>
         </div><!--cierra novedades-->
         <!--modal-->
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {{#each novedades}}
+        <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">TITULO</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <h3>Subtitulo</h3>
-                        <p>cuerpo</p>
+                        <h3>{{subtitulo}}</h3>
+                        <p>{{cuerpo}}</p>
                     </div>
                 </div>
             </div>
         </div>
+        {{/each}}
         <!--Fin modal-->
 
 
