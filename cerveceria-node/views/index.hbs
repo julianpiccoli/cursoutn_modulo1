@@ -15,7 +15,7 @@
             <ul class="lista-novedades">
                 {{#each novedades}}
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img
-                            src="img/novedades01.jpg">{{titulo}}</a></li>
+                            src="{{imagen}}">{{titulo}}</a></li>
                 {{/each}}
             
             </ul>
@@ -32,6 +32,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <img src="{{imagen}}">
                         <h3>{{subtitulo}}</h3>
                         <p>{{cuerpo}}</p>
                     </div>
